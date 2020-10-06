@@ -16,8 +16,8 @@
 export default {
   data() {
     return {
-      firstName: 'Foo',
-      lastName: 'Bar',
+      firstName: 'Foo5',
+      lastName: 'Bar2',
     };
   },
   computed: {
