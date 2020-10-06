@@ -1,7 +1,14 @@
 <template>
   <div>
-    <p>Original message: "{{ message }}"</p>
-    <p>Computed reversed message: "{{ reversedMessage }}"</p>
+    <div>
+    <label for="firstName">First Name:</label>
+    <input v-model="firstName" name="firstName" />
+    </div>
+    <div>
+    <label for="lastName">Last Name:</label>
+    <input v-model="lastName" />
+    </div>
+    <div id="demo">{{ fullName }}</div>
   </div>
 </template>
 
@@ -9,18 +16,25 @@
 export default {
   data() {
     return {
-      message: 'Hello'
+      firstName: 'Foo',
+      lastName: 'Bar',
+      fullName: 'Foo Bar'
     };
   },
-  computed: {
-    // a computed getter
-    reversedMessage: function () {
-      // `this` points to the vm instance
-      return this.message.split('').reverse().join('')
+  watch: {
+    firstName: function (val) {
+      this.fullName = val + ' ' + this.lastName
+    },
+    lastName: function (val) {
+      this.fullName = this.firstName + ' ' + val
     }
   }
 };
 </script>
 
 <style scoped>
+input,label, div{
+  margin: 5px;
+}
+
 </style>
