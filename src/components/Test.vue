@@ -1,18 +1,17 @@
 <template>
   <div>
-    <button @click="changeAlive()" class="mybutton" :style="actionStyle()">
-      {{ action() }}
-    </button>
-    <Life v-if="alive" />
-    <div v-else>Destroyed</div>
+    <Change />
+    <Display />
   </div>
 </template>
 
 <script>
-import Life from "./Life";
+import Change from "./Change";
+import Display from "./Display";
 export default {
   components: {
-    Life
+    Change,
+    Display
   },
   data() {
     return {
