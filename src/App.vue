@@ -1,17 +1,18 @@
 <template>
   <div id="app">
-    <Test  />
-  </div>
+  <h1>Hello App!</h1>
+  <p>
+    <router-link to="/" class="link">Go to Home</router-link>
+    <router-link to="/about" class="link">Go to About</router-link>
+  </p>
+  <router-view></router-view>
+</div>
 </template>
 
 <script>
-import Test from './components/Test.vue'
 
 export default {
   name: 'App',
-  components: {
-    Test
-  }
 }
 </script>
 
@@ -23,5 +24,16 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.link {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
 }
 </style>

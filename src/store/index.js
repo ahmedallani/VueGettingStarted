@@ -1,4 +1,8 @@
-export default {
+import Vue from "vue";
+import Vuex from "vuex";
+
+Vue.use(Vuex);
+export default new Vuex.Store({
   state: {
     count: 0,
   },
@@ -12,4 +16,4 @@ export default {
       return 2 * state.count;
     },
   },
-};
+});
